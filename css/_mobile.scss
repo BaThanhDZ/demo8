@@ -1,0 +1,237 @@
+@media ( min-width: 768px) and ( max-width: 1024px) {
+	nav {
+		.col-right { display: none;}
+		.button-mobile { display: block;}
+		.nav-mobile {
+			ul {
+				padding: 0 1rem;
+				clear: both;
+				content: '';
+				li {
+					float: left;
+					margin-right: 1.8rem;
+					a {
+						color: white;
+						display: block;
+						padding: 1.2rem .7rem;
+						font-weight: bold;
+					}
+					&:last-child { margin: 0;}
+					&:hover a {
+						color: #E2E2E2;
+						transition: all .5s;
+					}
+				}
+			}
+			.menu-li { 
+				.menu-dropdown {
+					position: absolute;
+					display: none;
+					right: 1.5rem;
+					top: 6.5rem;
+					background: white;
+					li {
+						float: none;
+						margin: .5rem 0;
+						&:last-child { margin: .5rem 0;}
+						a {
+							color: $default;
+							padding: .5rem;
+						}
+						&:hover a {
+							color: white;
+							background: $default;
+						}
+					}
+				}
+				&:hover .menu-dropdown { 
+					display: block;
+					transition: all .5s;
+				}
+			}
+		}
+	}
+	header .content { margin-top: 10rem !important;}
+	main {
+		.section_clients, .section_blog {
+			h1 { width: 100%;}
+			h1::after { display: none;}
+		}
+	}
+}
+ 
+@media ( min-width: 481px) and ( max-width: 767px) {
+	nav {
+		.col-right { display: none;}
+		.button-mobile { display: block;}
+		.nav-mobile {
+			position: absolute;
+		    right: 0;
+		    height: 100vh;
+		    background: black;
+		    opacity: .5;
+		    width: 10rem;
+		    top: 0;
+			ul {
+				padding: 4rem .5rem;
+				clear: both;
+				content: '';
+				li {
+					a {
+						color: white;
+						display: block;
+						padding: 1.2rem .7rem;
+						font-weight: bold;
+					}
+					&:last-child { margin: 0;}
+					&:hover a {
+						color: #E2E2E2;
+						transition: all .5s;
+					}
+				}
+			}
+			.menu-li { 
+				.menu-dropdown {
+					position: absolute;
+					display: none;
+					right: 1rem;
+					top: 30rem;
+					background: #F7F9FB;
+					padding: .5rem;
+					li {
+						float: none;
+						margin: .5rem 0;
+						&:last-child { margin: .5rem 0;}
+						a {
+							color: $default;
+							padding: .5rem;
+						}
+						&:hover a {
+							color: white;
+							background: $default;
+						}
+					}
+				}
+				&:hover .menu-dropdown { 
+					display: block;
+					transition: all .5s;
+				}
+			}
+		}
+	}
+	.sticky_nav a { color: white !important;}
+	header .content { margin-top: 5rem !important;}
+	main {
+		.section_count_numbers {
+			.text-center { margin-bottom: 3rem;}
+		}
+		.section_clients, .section_blog {
+			h1 { width: 100%;}
+			h1::after { display: none;}
+		}
+		.section_clients .details {
+			flex-direction: column;
+			.logo {
+				width: 75%;
+				margin: auto;
+				border: none;
+			}
+		}
+		.section_footer {
+			button { margin-bottom: 1rem;}
+			.content { text-align: center;}
+		}
+	}
+}
+
+@media ( max-width: 480px) {
+	nav {
+		.col-right { display: none;}
+		.button-mobile { display: block;}
+		.nav-mobile {
+			position: absolute;
+		    right: 0;
+		    height: 100vh;
+		    background: black;
+		    opacity: .5;
+		    width: 10rem;
+		    top: 0;
+			ul {
+				padding: 2.5rem .5rem;
+				clear: both;
+				content: '';
+				li {
+					a {
+						color: white;
+						display: block;
+						padding: 1.2rem .7rem;
+						font-weight: bold;
+					}
+					&:last-child { margin: 0;}
+					&:hover a {
+						color: #E2E2E2;
+						transition: all .5s;
+					}
+				}
+			}
+			.menu-li { 
+				.menu-dropdown {
+					position: absolute;
+					display: none;
+					right: 1rem;
+					top: 28.5rem;
+					background: #F7F9FB;
+					padding: .5rem;
+					li {
+						float: none;
+						margin: .5rem 0;
+						&:last-child { margin: .5rem 0;}
+						a {
+							color: $default;
+							padding: .5rem;
+						}
+						&:hover a {
+							color: white;
+							background: $default;
+						}
+					}
+				}
+				&:hover .menu-dropdown { 
+					display: block;
+					transition: all .5s;
+				}
+			}
+		}
+	}
+	.sticky_nav a { color: white !important;}
+	header h1 { display: none;}
+	main {
+		.section_features p { text-align: justify;}
+		.section_count_numbers {
+			.text-center { margin-bottom: 3rem;}
+		}
+		.section_clients, .section_blog {
+			h1 { width: 100%;}
+			h1::after { display: none;}
+		}
+		.section_clients .details {
+			flex-direction: column;
+			.logo {
+				width: 100%;
+				margin: auto;
+				border: none;
+			}
+		}
+		.section_footer {
+			.content { text-align: center;}
+			.row { 
+				flex-direction: column;
+				.col-3 {
+					width: 100%;
+					text-align: center;
+					margin-top: 2rem;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,441 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+} 
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	font-family: 'Inter', sans-serif;
+	font-size: 1rem;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a, a:hover {
+	text-decoration: none;
+}
+input {
+	outline: none;
+}
+$default: #484848;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@keyframes mark {
+	from { text-shadow: none;}
+	to { text-shadow: 0 0 10px red; color: #111111;}
+}
+@keyframes sticky {
+    from {
+        transform: translateY(-0.625rem);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+nav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	color: white;
+	font-size: .7rem;
+	.col-right {
+		margin-top: 5px;
+		ul {
+			clear: both;
+			content: '';
+			li {
+				float: left;
+				margin-right: 1rem;
+				a {
+					color: white;
+					display: block;
+					padding: 1rem;
+					font-weight: bold;
+				}
+				&:last-child { margin: 0;}
+				&:hover a {
+					color: #E2E2E2;
+					transition: all .5s;
+				}
+			}
+		}
+		.menu-li { 
+			.menu-dropdown {
+				position: absolute;
+				display: none;
+				right: 3rem;
+				top: 4rem;
+				background: white;
+				li {
+					float: none;
+					margin: .5rem 0;
+					&:last-child { margin: .5rem 0;}
+					a {
+						color: $default;
+						padding: .5rem;
+					}
+					&:hover a {
+						color: white;
+						background: $default;
+					}
+				}
+			}
+			&:hover .menu-dropdown { 
+				display: block;
+				transition: all .5s;
+			}
+		}
+		.add {
+			.more {
+				position: absolute;
+				top: 1.5rem;
+				right: 8.5rem;
+				color: red;
+				animation: mark 1s infinite linear;
+			}
+		}
+	}
+	.button-mobile {
+		display: none;
+		position: absolute;
+		z-index: 5;
+		top: 1.2rem;
+		right: 1rem;
+    	.button-show {
+			border: none;
+			background: transparent;
+			font-size: 2rem;
+			color: $default;
+		}
+    	font-size: 1.5rem;
+    	.btn:focus {
+    		box-shadow: none;
+    		color: $default;
+    	}
+	}
+	.nav-mobile { display: none;}
+}
+
+.sticky_nav {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    color: $default;
+    a { color: #111111 !important;}
+    opacity: .8;
+    animation: sticky ease-in-out .5s;
+    z-index: 999;
+    box-shadow: 0 0.25rem 0.5625rem -0.0625rem $default, 0 0.275rem 1.25rem -0.0625rem $default;
+}
+.button-hide::before { content: "\f00d" !important;}
+
+
+header { 
+	#particles-dots {
+		width: 100%;
+		height: 100vh;
+	}
+	canvas {
+		position: absolute;
+		top: 0;
+	}
+	.header {
+		position: relative;
+		background-image: url('../images/background.jpg');
+		background-position: center center;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	    width: 100%;
+	    height: 100%;
+	    align-items: center!important;
+	    min-height: 100vh;
+	    .content {
+	    	margin-top: 15rem;
+	    	color: white;
+	    	span { font-size: 1.5rem;}
+	    	h1 { font-size: 5rem;}
+	    	p { font-size: 1rem;}
+	    	.btn {
+	    		color: $default;
+	    		font-size: .6rem;
+	    		&:hover, &:focus {
+	    			box-shadow: none;
+	    			background: transparent !important;
+	    			border: 1px solid white;
+	    			color: white;
+	    			transition: all .5s;
+	    		}
+	    	}
+	    }
+	}
+}
+
+main {	
+	.section_features {
+		padding: 5rem 0 3rem;
+		transform: translateY(5rem);
+		transition: all 1s;
+		opacity: 0;
+		p { line-height: 1.5;}
+		.control-h1 {
+			position: relative;
+			h1::after {
+				width: 10rem;
+				content: '';
+				position: absolute;
+				color: red;
+				top: 5rem;
+				left: 0;
+				border: 1px solid $default;
+			}
+		}
+		.item {
+			position: relative;
+			.add {
+				position: absolute;
+				right: 0;
+				top: 0;
+				font-size: 12px;
+			}
+			.check-progress {
+				background-color: #DFDFDF;
+				width: 100%;
+				height: 1rem;
+				.check  {
+					background-color: black;
+					width: 0;
+					transition: all ease-in-out 1s;
+					height: 1rem;
+				}
+			}
+		}
+	}
+	.section_count_numbers {
+		background: #F7F9FB;
+		padding: 4rem 0;
+		transform: translateY(5rem);
+		transition: all 1s;
+		opacity: 0;
+		i { font-size: 3rem;}
+	}
+	.section_services {
+		transform: translateY(5rem);
+		transition: all 1s;
+		opacity: 0;
+		padding: 5rem 0 3rem;
+		p { font-size: 20px;}
+		.control-h1 {
+			position: relative;
+			h1::after {
+				width: 10rem;
+				content: '';
+				position: absolute;
+				color: red;
+				top: 5rem;
+				left: 0;
+				border: 1px solid $default;
+			}
+		}
+		.title {
+			margin: 2.5rem 0;
+			p { 
+				line-height: 1.5;
+				color: #777;
+				font-size: 1rem;
+			}
+			a {
+				padding: .5rem;
+				border-radius: 1rem;
+			}
+			&:hover a {
+				text-shadow: 0 0 1rem black;
+				transition: all .5s;
+			}
+		}
+		.more {
+			font-size: 1.8rem;
+			color: #DFDFDF;
+		}
+		&:after {
+			position: absolute;
+			content: '';
+			width: 100%;
+			border-top: 1px solid #DFDFDF;
+			bottom: 4rem;
+		}
+	}
+	.section_clients {
+		transform: translateY(5rem);
+		transition: all 1s;
+		//opacity: 0;
+		padding: 5rem 0 3rem;
+		p { font-size: 20px;}
+		h1 {
+			position: relative;
+			width: 50%;
+			&::after {
+				width: 10rem;
+				content: '';
+				position: absolute;
+				color: red;
+				top: 5rem;
+				left: 5rem;
+				border: 1px solid $default;
+			}
+		}
+		.details {
+			border-bottom: 1px solid #DFDFDF;
+			&:last-child { border: none;}
+			.logo {
+				width: 20%;
+				border-right: 1px solid #DFDFDF;
+				&:last-child { border-right: none;}
+				a {
+					display: block;
+					padding: 2rem;
+				}
+				&:hover {
+					background: #f8f8f8;
+					transition: .5s; 
+				}
+			}
+		}
+	}
+	.section_blog {
+		transform: translateY(5rem);
+		transition: all 1s;
+		//opacity: 0;
+		background: #F7F9FB;
+		padding: 5rem 0 3rem;
+		p { font-size: 20px;}
+		h1 {
+			position: relative;
+			width: 50%;
+			&::after {
+				width: 10rem;
+				content: '';
+				position: absolute;
+				color: red;
+				top: 5rem;
+				left: 5rem;
+				border: 1px solid $default;
+			}
+		}
+		.details {
+			border: 1px solid #DFDFDF;
+			margin-top: 2rem;
+			background: white;
+			position: relative;
+			.add {
+				position: absolute;
+				right: .5rem;
+				top: .5rem;
+				padding: .5rem 1rem;
+				color: white;
+				background: blue;
+				border-radius: 1rem;
+				&:hover {
+					background: white;
+					color: $default;
+					transition: all .5s;
+				}
+			}
+			.content {
+				padding: 1rem 1.5rem 1rem 1rem;
+				a { color: $default;}
+				a:hover { color: black;}
+				ul {
+					clear: both;
+					content: '';
+					li { 
+						float: left;
+						margin-right: 1rem;
+						color: #DFDFDF;
+					}
+				}
+				p {
+					line-height: 1.5;
+					font-size: 1rem;
+				}
+				.more:hover a { 
+					letter-spacing: 1px;
+					transition: all 1s;
+				}
+			}
+			
+		}
+	}
+	.section_footer {
+		transform: translateY(5rem);
+		transition: all 1s;
+		opacity: 0;
+		background: #F7F9FB;
+		padding: 5rem 0 3rem;
+		button {
+			font-size: .8rem;
+			padding: .5rem 1rem;
+		}
+		ul li {
+			margin-bottom: 1rem;
+			&:last-child { margin: 0;}
+		}
+	}
+}
+.section_add1, .section_add2, .section_add3, .section_add4, .section_add5, .section_add6  {
+	opacity: 1 !important;
+    transform: translateY(0px) !important;
+}
+.active_color {
+	border-radius: 5px;
+	background: #DFDFDF;
+}
+
+footer .footer {
+	background: #EFF1F4;
+	padding: 2rem 0;
+	font-size: 12px;
+}
+
+
+
+@import 'mobile.scss';
+
+
+			
